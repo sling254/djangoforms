@@ -2,6 +2,11 @@ from django.shortcuts import get_object_or_404, render
 from django .http import HttpResponseRedirect
 from .forms import ContactForm
 from django.core.mail import send_mail, get_connection
+from datetime import date
+import calendar
+from calendar import HTMLCalendar
+
+
 
 def contact(request):
     submitted = False
@@ -27,5 +32,8 @@ def contact(request):
                 
 
     return render(request, 'contact.html',{'form':form,'submitted':submitted})
+
+
+     
     
     
